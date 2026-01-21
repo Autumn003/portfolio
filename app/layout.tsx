@@ -33,7 +33,7 @@ export default function RootLayout({
         <div className="fixed inset-0 w-full h-full z-100 bg-neutral-500 bg-[url(/noise.svg)] bg-repeat opacity-[0.2] pointer-events-none" />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
         >
           <TooltipProvider delayDuration={0}>
