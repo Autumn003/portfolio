@@ -4,7 +4,6 @@ import { Projects } from "@/components/projects";
 import { ResumeCard } from "@/components/resume-card";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/Content";
-import Markdown from "react-markdown";
 
 export default function Page() {
   return (

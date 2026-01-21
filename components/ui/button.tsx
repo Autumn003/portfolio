@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         liquid:
-          "relative overflow-hidden bg-gradient-to-br from-white/40 to-white/10 text-white shadow-lg backdrop-blur-xl border border-white/20 hover:from-white/50 hover:to-white/20 hover:border-white/30 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity after:absolute after:inset-[1px] after:rounded-[calc(0.375rem-1px)] after:bg-gradient-to-br after:from-white/10 after:to-transparent after:pointer-events-none",
+          "relative overflow-hidden bg-linear-to-br from-white/40 to-white/10 text-white shadow-lg backdrop-blur-xl border border-white/20 hover:from-white/50 hover:to-white/20 hover:border-white/30 transition-all duration-300 before:absolute before:inset-0 before:bg-linear-to-br before:from-white/20 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity after:absolute after:inset-px after:rounded-[calc(0.375rem-1px)] after:bg-linear-to-br after:from-white/10 after:to-transparent after:pointer-events-none",
       },
       size: {
         default: "h-9 px-4 py-2",
@@ -33,11 +33,12 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
@@ -52,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

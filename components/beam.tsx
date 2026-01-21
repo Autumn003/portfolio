@@ -11,7 +11,7 @@ export function Beam() {
 
   return (
     <div
-      className="relative flex w-full max-w-[500px] h-60 items-center justify-center overflow-hidden p-10"
+      className="relative flex w-full max-w-125 h-60 items-center justify-center overflow-hidden p-10"
       ref={containerRef}
     >
       <div className="flex size-full flex-col items-stretch justify-between gap-10">
