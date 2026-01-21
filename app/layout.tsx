@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Navbar from "@/components/navbar";
+import FloatingNavbar from "@/components/floating-navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +29,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        {children}
+        <div className="fixed inset-0 w-full h-full z-100 bg-neutral-500 bg-[url(/noise.svg)] bg-repeat opacity-[0.2] pointer-events-none" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          <TooltipProvider delayDuration={0}>
+            {children}
+            <div className="z-100">
+              <FloatingNavbar />
+            </div>
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
